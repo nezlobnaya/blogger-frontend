@@ -7,12 +7,13 @@ const ProgressBar = ({ loading }) => {
    return loading ? <Progress /> : <div />;
 };
 
-const mapStateToProps = state => ({
-   loading:
-      state.auth.userLoading ||
+const mapStateToProps = state => 
+(
+    {
+   loading: state.auth.userLoading ||
       state.post.postLoading ||
       state.post.postsLoading
-});
+})
 
 ProgressBar.propTypes = {
    loading: PropTypes.bool.isRequired

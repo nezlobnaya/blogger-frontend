@@ -4,7 +4,7 @@ import NavigationBar from "../../components/layout/NavigationBar";
 import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
 
-const Navbar = ({ auth, logoutUser }) => {
+const NavBar = ({ auth, logoutUser }) => {
    const handleClick = e => {
       e.preventDefault();
       logoutUser();
@@ -16,7 +16,7 @@ const mapStateToProps = state => ({
    auth: state.auth
 });
 
-Navbar.propTypes = {
+NavBar.propTypes = {
    auth: PropTypes.object.isRequired,
    logoutUser: PropTypes.func.isRequired
 };
@@ -24,4 +24,4 @@ Navbar.propTypes = {
 export default connect(
    mapStateToProps,
    { logoutUser }
-)(Navbar);
+)(NavBar);
